@@ -22,3 +22,17 @@ class Factory:
         else:
             return f"{self.name} is not operational."
         
+        
+name = input("Enter the factory name: ")
+location = input("Enter the factory location: ")
+year_founded = int(input("Enter the year the factory was founded: "))
+num_employees = int(input("Enter the number of employees: "))
+production_type = input("Enter the type of production: ")
+capacity_ped_day = int(input("Enter the capacity per day: "))
+is_working = input("Is the factory currently operational? (yes/no): ").strip().lower() == 'yes'
+
+factory = Factory(name, location, year_founded, num_employees, production_type, capacity_ped_day, is_working)
+
+print(factory)
+print(f"Annual Capacity: {factory.calculate_annual_capacity()}")
+print(factory.working_status())
